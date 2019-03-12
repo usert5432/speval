@@ -11,7 +11,7 @@ setup(
     version          = "0.1",
     author           = 'Dmitrii Torbunov',
     author_email     = 'torbu001@umn.edu',
-    url              = 'http://localhost/',
+    url              = 'https://github.com/usert5432/speval',
     packages         = [ 'speval' ],
     description      = 'Simple Parellel Function Evaluator',
     long_description = readme(),
