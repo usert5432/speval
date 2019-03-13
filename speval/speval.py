@@ -42,7 +42,10 @@ def connect_evals(fname):
     connection : `sqlite3.Connection`
         Connection object to a sqlite database
     """
-    return sqlite3.connect(fname, isolation_level = 'EXCLUSIVE')
+    conn = sqlite3.connect(fname, isolation_level = 'EXCLUSIVE')
+    conn.execute('BEGIN EXCLUSIVE')
+
+    return conn
 
 
 def load_evals(fname):
@@ -124,8 +127,6 @@ CREATE TABLE evals (
             'INSERT INTO evals VALUES (?,?,?,?,?)',
             (k, 'pending', time.time(), None, json.dumps(eval_space[k]))
         )
-
-    conn.commit()
 
 
 def check_evals_initialized(conn):

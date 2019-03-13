@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name             = 'speval',
-    version          = "0.1",
+    version          = '0.1.1',
     author           = 'Dmitrii Torbunov',
     author_email     = 'torbu001@umn.edu',
     url              = 'https://github.com/usert5432/speval',
